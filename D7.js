@@ -75,11 +75,9 @@ function sumArray(givenArray) {
 const nuovoArray = (givenArray, n) =>
   givenArray.map((element) => {
     return element + n;
-  });
+  }); //Fornendo un array come primo parametro, e un numero come secondo, ci verrà fornito un array di numeri del primo array + n
 
-console.log(nuovoArray(arrayEx, 2)); //Fornendo un array come primo parametro, e un numero come secondo, ci verrà fornito un array di numeri del primo array + n
-
-/* ESERCIZIO 8
+/* console.log(nuovoArray(arrayEx, 2)) */ /* ESERCIZIO 8
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
@@ -95,11 +93,16 @@ const strgArrLen = (givenArray) =>
 /* ESERCIZIO 9
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
-
-for (let index = 0; index < 100; index++) {
-   if 
-} 
-
+const Oddify = () => {
+  const arrOdd = [];
+  for (let i = 0; i < 100; i++) {
+    if (i % 2 !== 0) {
+      arrOdd.push(i);
+    }
+  }
+  return arrOdd;
+};
+/* console.log(Oddify()); */
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -220,6 +223,15 @@ const movies = [
 /* ESERCIZIO 10
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+
+const oldestMovie = (givenArray) => {
+  const filter = givenArray.filter(
+    (element) => element.Year == Math.min(...movies.map((item) => item.Year))
+  );
+  return filter;
+};
+
+console.log(oldestMovie(movies));
 
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
